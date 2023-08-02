@@ -1,0 +1,21 @@
+# -*- muttrc -*-
+#
+# Keyboard bindings for mutt.
+#
+
+# Generic key bindings.
+bind generic "\e<"   first-entry
+bind generic "\e>"   last-entry
+bind generic "<"     first-entry
+bind generic ">"     last-entry
+bind generic <home>  first-entry
+bind generic <end>   last-entry
+bind generic <left>  previous-entry
+bind generic <right> next-entry
+
+# View attachment using mailcap (tap 'v', select attachment, tap 'Enter')
+bind attach <return>  view-mailcap
+
+# Unbind 'g', as it conflicts with custom sidebar macros
+bind index g noop
+

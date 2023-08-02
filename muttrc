@@ -1,0 +1,66 @@
+# ~/.mutt/muttrc
+#
+
+# General settings
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+set signature = "~/.mutt/signature"
+
+set mail_check = 60
+set timeout = 10
+set sort = "reverse-last-date-received"
+set nomark_old				    # don't mark unread new messages as old
+set delete=ask-yes              # ask before deleting messages
+
+set editor = nvim               # nano, nvim or emacsclient
+set abort_nosubject = yes       # don't send if there is no subject
+set include                     # include original message in reply
+set forward_format = "Fwd: %s"  # format of subject when forwarding
+set forward_quote               # include message in forwards
+set reverse_name                # reply as whomever it was sent to
+
+# Receiving options (imap)
+set imap_user = "my.name@email.org"
+set imap_authenticators =  ""
+set folder = "imaps://my.name@email.org@imap.email.org:993"
+
+# Sending options (smtp)
+set smtp_url = "smtps://my.name@email.org@smtp.email.org:465"
+set from = "my.name@alias.address.co.uk"
+set realname = "My Name"
+set copy = yes                  # Copy sent email to the 'record'(ie sent) mailbox
+
+# Mailboxes
+set spoolfile = "+INBOX"
+set postponed = "=Drafts"
+set record = "=Sent"
+set trash = "=Trash"
+
+# Security
+set ssl_starttls = yes
+set ssl_force_tls = yes
+set crypt_autosign = yes
+
+# Print an email
+set print=ask-yes
+set print_command="~/bin/mutt-print.sh"
+
+# Source files
+source "gpg -d ~/.mutt/password.gpg |" # see the accompanying NOTES
+source ~/.mutt/mutt-alias
+source ~/.mutt/bindings
+source ~/.mutt/colours
+source ~/.mutt/headers
+source ~/.mutt/layout
+source ~/.mutt/macros
+source ~/.mutt/sidebar
+
+# Render HTML pages human readable (don't forget to modify ~/.mutt/mailcap)
+auto_view text/html text/calendar application/ics       # view html automatically
+alternative_order text/plain text/enriched text/html    # save html for last
+set mailcap_path="~/.mutt/mailcap"	                    # location of mailcap file
+
+# Display mutt's version on startup
+push <show-version>
+

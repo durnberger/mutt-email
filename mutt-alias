@@ -1,0 +1,4 @@
+# This is a simple address book, which ores names, email addresses and the alias you 
+# assign each contact. The format is as follows;
+
+alias mary Mary Doe <mary@email.co.uk>

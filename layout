@@ -1,0 +1,30 @@
+# -*- muttrc -*-
+#
+# Configure index layout (the index being the page that displays all the emails).
+#
+# Index - number of emails listed above the open email
+# (default is 10)
+#
+set pager_index_lines=0
+
+# Index page headings
+# %C Message number
+# %Z Message status flags
+# %d Day
+# %b Month
+# %R Time
+# %L Sender's name
+# %c Message size in bytes
+# %s Subject line
+#
+# Referring to the example below, the numbers 4 & 26 indicate that the columns are 
+# 4 & 26 characters wide respectively. These numbers can be adjusted as required.
+#
+# Referrring to the setting '%-xx.xxL', the first number defines the column width.
+# The second number defines the space available for the text. If for example the 
+# setting was configured as '-20.26L' the space available for the text would be
+# longer than the maximum column width. To keep the index page tidy, ideally the
+# first digit should be the same as or greater than the second digit.
+#
+set index_format="%4C %Z %{%d %b %R} %-26.26L (%4c) %s"
+

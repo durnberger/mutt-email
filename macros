@@ -1,0 +1,14 @@
+# -*- muttrc -*-
+#
+# Macros used by mutt
+#
+
+# Extract hyperlinks from emails (trigger with 'ctrl+b')
+macro pager \cb |urlscan\n 'Follow links with urlscan'
+
+# Easily move between folders
+macro index gi "<change-folder>$spoolfile<Enter>" "go to inbox"
+macro index gd "<change-folder>$postponed<enter>" "go to drafts"
+macro index gs "<change-folder>$record<enter>" "go to sent"
+macro index gt "<change-folder>$trash<enter>" "go to trash"
+

@@ -1,0 +1,38 @@
+# ~/.mutt/mailcap
+
+# ==============
+# Opening emails
+# ==============
+#
+# Mailcap will try to open the email in the given web browser.
+# If that fails it will open it in 'lynx' in a terminal
+text/html; ~/bin/browser-norace.sh %s; needsterminal;
+text/html; lynx %s;
+text/html; lynx -dump %s; copiousoutput;
+
+# ========================
+# Dealing with attachments
+# ========================
+#
+# Render email elements in human readable form
+multipart/alternative; lynx -dump %s; copiousoutput;
+text/calendar; lynx -dump %s; copiousoutput;
+text/plain; lynx -dump %s; copiousoutput;
+
+# MSWord (.docx)
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; libreoffice --writer %s;
+
+# OpenDocument (.odt)
+application/vnd.oasis.opendocument.text; libreoffice --writer %s;
+
+# Other formats
+application/ics; evolution -c calendar %s;
+application/pdf; evince %s;
+image/jpeg; eog %s;
+image/JPG; eog %s;
+image/jpg; eog %s;
+image/gif; eog %s;
+image/GIF; eog %s;
+image/png; eog %s;
+image/PNG; eog %s;
+

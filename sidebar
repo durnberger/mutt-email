@@ -1,0 +1,83 @@
+# -*- muttrc -*-
+#
+# This is a complete list of sidebar-related configurations
+#
+
+# --------------------------------------------------------------------------
+# FUNCTIONS
+# --------------------------------------------------------------------------
+
+# Move the highlight to the previous mailbox
+# (\Cp = ctrl+p)
+bind index,pager \Cp sidebar-prev
+
+# Move the highlight to the next mailbox
+# (\Cn = ctrl+n)
+bind index,pager \Cn sidebar-next
+
+# Open the highlighted mailbox
+# (\Co = ctrl+o)
+bind index,pager \Co sidebar-open
+
+# Toggle the visibility of the Sidebar.
+# (pager S = uppercase S)
+bind index,pager S sidebar-toggle-visible
+
+# --------------------------------------------------------------------------
+# VARIABLES
+# --------------------------------------------------------------------------
+
+# Should the Sidebar be shown?
+set sidebar_visible = yes
+
+# Mailboxes
+# (As defined in muttrc)
+mailboxes "+INBOX" "=Drafts" "=Sent" "=Trash" "=Archive"
+
+# How wide should the Sidebar be in screen columns?
+# Note: Some characters, e.g. Chinese, take up two columns each.
+set sidebar_width = 24
+
+# Email stats (example: read/unread etc)
+set mail_check_stats
+
+# Should the mailbox paths be abbreviated?
+set sidebar_short_path = no
+
+# When abbreviating mailbox path names, use any of these characters as path
+# separators.  Only the part after the last separators will be shown.
+# For file folders '/' is good.  For IMAP folders, often '.' is useful.
+set sidebar_delim_chars = '/.'
+
+# If the mailbox path is abbreviated, should it be indented?
+set sidebar_folder_indent = no
+
+# Indent mailbox paths with this string.
+set sidebar_indent_string = '  '
+
+# Make the Sidebar only display mailboxes that contain new, or flagged, mail.
+set sidebar_new_mail_only = no
+
+# When searching for mailboxes containing new mail, should the search wrap
+# around when it reaches the end of the list?
+set sidebar_next_new_wrap = no
+
+# The character to use as the divider between the Sidebar and the other Mutt
+# panels. Note: Only the first character of this string is used.
+set sidebar_divider_char = '|'
+
+# Enable extended buffy mode to calculate total, new, and flagged
+# message counts for each mailbox.
+set mail_check_stats
+
+# Display the Sidebar mailboxes using this format string.
+set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
+
+# Sort the mailboxes in the Sidebar using this method:
+#       count    - total number of messages
+#       flagged  - number of flagged messages
+#       new      - number of new messages
+#       path     - mailbox path
+#       unsorted - do not sort the mailboxes
+set sidebar_sort_method = 'unsorted'
+

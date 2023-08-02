@@ -1,5 +1,5 @@
 ---
-title: Notes on Mutt Email 
+title: Mutt Configuration Files 
 author: Paul Dürnberger	
 date: 02 August 2023 
 tags: [ mutt, email ]

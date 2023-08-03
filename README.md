@@ -5,8 +5,6 @@ date: 02 August 2023
 tags: [ mutt, email ]
 ---
 
-test again onve more
-
 # Mutt Configuration Files
 
 ## Introduction
